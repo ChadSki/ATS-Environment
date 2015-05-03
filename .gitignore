@@ -1,8 +1,8 @@
 ############
 ## Project-specific
 ############
-hello_dats.c
-hello_dats.exe
+main_dats.c
+out.exe
 
 #################
 ## Visual Studio

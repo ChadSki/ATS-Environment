@@ -1,11 +1,13 @@
 #!/bin/sh
-cd "$(dirname $0)"
+DIR="$( dirname "${BASH_SOURCE[0]}" )"
+cd $DIR
 echo "INFO Working dir set to $(pwd)"
 echo "INFO Transpiling ATS2 to C"
-patscc hello.dats -ccats
+patscc src/main.dats -ccats
 echo "INFO Compiling C to binary executable"
-PATH=./vendor/tcc:$PATH
-tcc.exe -I./vendor/ats2 -I./vendor/ats2/runtime -I./vendor/tcc/include hello_dats.c
+PATH=vendor/tcc:$PATH
+tcc.exe -Ivendor/ats2 -Ivendor/ats2/runtime -Ivendor/tcc/include -o out.exe main_dats.c
 echo "INFO Launching"
 echo ""
-./hello_dats.exe
+./out.exe
+echo ""
