@@ -1,5 +1,4 @@
-(* Copyright 2015 Chad Zawistowski *)
-implement main0 () = _ where {
+implement main0 () = let
   val _ = print ("Hello, world!\n");
   val _ = print ("Another line!\n")
-}
+in () end
